@@ -1,0 +1,49 @@
+<!--component/requestAuth/index.wxml-->
+<view class="request-auth" style="z-index:{{ isClose?'-100':'10' }}">
+<view class="cover" hidden="{{isClose}}"></view>
+<view class="content" style="height:{{ isClose?'0rpx':'852rpx'}}">
+   <image class="close" src="img/close.png" bindtap="closeCom" data-action="close"></image>
+   <!-- 主体内容部分 -->
+   <view class="goods-name">{{ goodDetail.goodName }}</view>
+   <view class="goods-attr">规格：{{ goodDetail.goodAttr }}</view>
+   <!-- 表单部分 -->
+   <form class="form">
+      <view class="form-item">
+         <label class="form-item-lable">销售单价：</label>
+         <input class="form-item-input" type="digit" name="sale_price" placeholder="点击输入" value="{{ goodDetail.goodPrice }}" bindinput="formInput" 
+         data-item="goodPrice"
+          ></input>
+         <image class="edit-icon"  src="img/edit.png"></image>
+          <view class="unit">{{ goodDetail.goodUnit }}</view>
+      </view>
+      <view class="form-item">
+         <label class="form-item-lable">进货单价：</label>
+         <input class="form-item-input" type="digit" name="purchase_price" placeholder="点击输入" value="{{ goodDetail.purchasePrice }}" bindinput="formInput"
+         data-item="purchasePrice"
+          ></input>
+         <image class="edit-icon" src="img/edit.png"></image>
+          <view class="unit">{{ goodDetail.goodUnit }}</view>
+      </view>
+      <view class="form-item">
+         <label class="form-item-lable">提成单价：</label>
+         <input class="form-item-input" type="digit" name="commission_price" placeholder="点击输入" value="{{ goodDetail.commissionPrice }}" bindinput="formInput"
+         data-item="commissionPrice"
+         ></input>
+         <image class="edit-icon" src="img/edit.png"></image>
+         <view class="unit">{{ goodDetail.goodUnit }}</view>
+      </view>
+      <view class="form-item" wx:for="{{goodDetail.goodUnitStock}}" wx:key="index">
+         <label class="form-item-lable">库存：</label>
+         <input class="form-item-input" name="stock" placeholder="点击输入" value="{{ item.stock }}" bindinput="formInput"
+         data-item="item.stock" disabled="true"
+         ></input>
+         <!-- <image class="edit-icon" src="img/edit.png"></image> -->
+          <view class="unit">箱</view>
+      </view>
+      <!-- 区别上下架操作 -->
+      <view class="shelves" hidden="{{ goodDetail.isShelves }}" bindtap="" data-action="shelves">完成上架</view>
+      <view class="save" hidden="{{ !goodDetail.isShelves }}" bindtap="" data-action="shelves">保存</view>
+      <view class="take-off" hidden="{{ !goodDetail.isShelves }}" bindtap="" data-action="take-off">下架</view>
+   </form>
+</view>   
+</view>

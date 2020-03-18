@@ -1,0 +1,4 @@
+<!--component/goodsManage/serarchText.wxml-->
+<view class="serarch">
+<input class="serarch-input" placeholder="请输入关键词搜索" value="{{ serach }}" bindconfirm="inputConfirm" ></input>
+</view>

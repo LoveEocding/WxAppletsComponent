@@ -1,0 +1,22 @@
+<!--component/goodsManage/headNav.wxml-->
+<view class="headnav" style="padding-top:{{ navTop+'rpx' }}">
+   <view class="cover"></view>
+   <view class="content">
+      <image class="return" src="img/dir_left.png" bindtap="urlReturn"></image>
+      <!-- 品牌名称居中显示布局 -->
+      <view class="brand-conter">
+          <view class="brand-title" bindtap="extendList">{{ locationBrand.brandName }}</view>
+          <image class="dir-bottom" src="img/dir_bottom.png" bindtap="extendList"></image>
+      </view>
+      <!-- 搜索结果 -->
+      <view class="result-list" style="height:{{ inputShow?(brandList.length+1)*60+'rpx':'0rpx' }}">
+         <!-- input用户搜索 -->
+         <input class="brand-title-input" placeholder="请输入关键词" value="{{ serachTxt }}"  bindinput="bindKeyInput" ></input>
+         <view class="brand-item {{ item.isChecked?'checked_change':'' }} " 
+         wx:for="{{ brandList }}" wx:key="brandCode" data-id="{{ item.brandCode }}" 
+         bindtap="changeBrand"
+         data-index="{{ index }}"  hidden="{{ !item.isShow }}" >
+         {{ item.brandName }}  </view>
+   </view>
+</view>
+</view>

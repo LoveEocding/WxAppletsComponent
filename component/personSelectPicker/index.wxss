@@ -1,0 +1,162 @@
+/* component/personSelectPicker/index.wxss */
+.person-select-picker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.cover{
+  width: 100%;
+  height: 100%;
+  background:rgba(51,51,51,0.2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.person-picker{
+  width:100%;
+  height:1165rpx;
+  background:rgba(255,255,255,1);
+  border-radius:50rpx 50rpx 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition-duration: 0.5s;
+  z-index: 200;
+}
+.colse{
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  top: 33rpx;
+  right: 41rpx;
+}
+.title{
+  font-size:34rpx;
+font-family:PingFang SC;
+color:rgba(51,51,51,1);
+position: absolute;
+top: 84rpx;
+left: 40rpx;
+}
+.ed-person{
+  font-size:24rpx;
+  font-family:PingFang SC;
+font-weight:bold;
+color:rgba(230,86,63,1);
+position: absolute;
+right: 30rpx;
+top: 94rpx;
+}
+
+.select-list{
+   margin-top: 177rpx;
+   padding-left: 40rpx;
+   height: 990rpx;
+   width: 100%;
+   margin-bottom: 100rpx;
+}
+.group{
+  width: 100%;
+  min-height: 90rpx;
+}
+.group:last-child{
+  margin-bottom: 80px;
+}
+.group-head{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom:1px solid #cccccc;
+}
+
+.radio{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 25px;
+  border:1px solid #c3c3c3; 
+}
+
+.group-name{
+  margin-left: 21rpx;
+  width: 180rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  color:rgba(51,51,51,1);
+}
+.expand-div{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.direction{
+  width: 26rpx;
+  height: 14rpx;
+  margin-left: 400rpx;
+}
+/* 子节点 */
+.group-child{
+  width: 100%;
+  padding-left: 63rpx;
+  transition-duration:0.3s;
+  overflow: hidden;
+  height: 0;
+  
+}
+.group-child-item{
+ height: 88rpx;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+}
+/* 字母表 */
+.select-type{
+  position: absolute;
+  top: 173rpx;
+  right: 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select-type-item{
+  font-size:22rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom:18rpx; 
+}
+.sure{
+  width: 100%;
+  height: 99rpx;
+  background:rgba(230,86,63,1);
+  position: absolute;
+  top: 1066rpx;
+  left: 0;
+  text-align: center;
+  line-height: 99rpx; 
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color: white;
+  z-index: 50000;
+}
+
+/* 接下来全是交互操作类 */
+/* 关闭标签 */
+.tab-close{
+  height: 0;
+}
+/* 按钮变红操作 */
+.radio-red{
+  background:rgba(230,86,63,1);
+  border: 1px solid rgba(230,86,63,1);
+}
+

@@ -1,0 +1,20 @@
+/* component/goodsManage/serarchText.wxss */
+.serarch{
+  width: 100%;
+  height: 84rpx;
+  background:rgba(242,242,242,1);
+  padding-top:35rpx;
+  padding-left: 18rpx;
+}
+.serarch-input{
+  width:690rpx;
+  height:49rpx;
+  background:rgba(255,255,255,1);
+  border-radius:21rpx;
+  padding-left: 25rpx;
+  font-size:20rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+
+}

@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="component-list">
+  <navigator class="component-item" url="../../component/messageMarquee/index" wx:for="{{ menuList }}" url="{{item.url}}" >{{ item.name }}</navigator>
+  </view>
+</view>

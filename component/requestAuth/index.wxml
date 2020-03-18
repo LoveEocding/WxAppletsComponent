@@ -1,0 +1,14 @@
+<!--component/requestAuth/index.wxml-->
+<view class="request-auth" style="z-index:{{ isClose?'-100':'10' }}">
+<view class="cover" hidden="{{isClose}}"></view>
+<view class="content" style="height:{{ isClose?'0rpx':'562rpx'}}">
+   <image class="close" src="image/close.png" bindtap="closeCom" data-action="close"></image>
+   <view class="title">授权 <text class="aggravate">娃哈哈数字营销平台</text>  获取以下信息为您服务</view>
+   <view class="auth">
+   <checkbox class="tick" checked="{{ isCheck }}" ></checkbox>
+   请授权数字化营销平台对您发送消息通知
+   </view>
+   <view class="subs" bindtap="closeCom" data-action="agree" >订阅</view>
+   <view class="refuse"bindtap="closeCom" data-action="close" >残忍拒绝</view>
+</view>   
+</view>

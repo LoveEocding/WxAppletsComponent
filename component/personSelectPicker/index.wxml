@@ -1,0 +1,37 @@
+<!--component/personSelectPicker/index.wxml-->
+<view class="person-select-picker" style="z-index:{{isClose?-1000:1000}}" catchtouchmove="preventdefault">
+<!-- 遮罩层 -->
+<view class="cover" hidden="{{isClose}}"></view>
+<view class="person-picker" style="height:{{isClose?'0rpx':'1165rpx'}}">
+    <!-- <image class="colse" src="image/guanbi@2x.png" bindtap="closeAction"></image> -->
+    <label class="title">选择收件人</label>
+    <text class="ed-person">已选{{ selectNum }}人</text>
+    <!-- 确定按钮 -->
+    <view class="sure" bindtap="sureOK">确定</view>
+    <!-- 左侧二级选择 -->
+    <scroll-view class="select-list" scroll-y="true" catchtouchmove="preventdefault">
+             <view class="group" wx:for="{{nodeList}}" wx:for-index="pIndex" wx:for-item="pItem">
+                 <view class="group-head">
+                      <view class="radio {{pItem.isChecked?'radio-red':''}} "  data-index="{{pIndex}}" bindtap="clickParentNode"></view>
+                      <view class="group-name" bindtap="clickParentNode" data-index="{{pIndex}}" >{{pItem.name}}</view>
+                      <!-- 中间撑开部分 -->
+                      <view class="expand-div" bindtap="parentExpand" data-pindex="{{pIndex}}">
+                         <image bindtap="parentExpand" data-pindex="{{pIndex}}"  class="direction"              src="image/dirdown.png"></image>
+                      </view>
+                 </view>
+                 <!-- 动效 -->
+                 <view class="group-child" style="height:{{pItem.isExpand?pItem.childNode.length*88+'rpx':'0rpx' }}">
+                       <view class="group-child-item" wx:for="{{pItem.childNode}}"  wx:for-index="cIndex" wx:for-item="cItem">
+                           <view class="radio {{cItem.isChecked?'radio-red':''}}" bindtap="clickChildNode" data-pindex="{{pIndex}}" data-cindex="{{cIndex}}" ></view>
+                           <text class="group-name" bindtap="clickChildNode" data-pindex="{{pIndex}}" data-cindex="{{cIndex}}" >{{cItem.name}}</text>
+                       </view>
+                 </view>
+             </view>
+    </scroll-view>
+    <!-- 右侧字母列表 -->
+    <view class="select-type" hidden="{{true}}">
+             <text class="select-type-item" wx:for="{{letterArray}}">{{item}}</text>
+    </view>
+  
+</view>
+</view>

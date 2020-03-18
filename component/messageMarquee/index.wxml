@@ -1,0 +1,8 @@
+<!--component/messageMarquee/index.wxml-->
+<view class="meesage-marquee">
+<image src="image/marquee_logo.png" class="marquee-logo"></image>
+<view class="marquee-text" style="left:{{ marqueeTextLeft+'rpx' }};transition-duration:{{ duration+'s' }}" bindtap="jumpToUrl" >{{ marqueeText }}</view>
+<!-- 右边部分遮盖 -->
+<view class="marquee-right-cover" bindtap="jumpToUrl"></view>
+<image src="image/dir.png" class="marquee-dir" bindtap="jumpToUrl"></image>
+</view>

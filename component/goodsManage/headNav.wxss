@@ -1,0 +1,73 @@
+/* component/goodsManage/headNav.wxss */
+.headnav{
+  width: 100%;
+  height: 75rpx;
+  /* background:rgba(255,255,255,1); */
+  padding-top: 80rpx;
+}
+.content{
+  width: 100%;
+  height: 31rpx;
+  position: relative;
+  top: 10rpx;
+}
+.return{
+  width: 14rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+}
+.brand-conter{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.brand-title{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.dir-bottom{
+  width: 26rpx;
+  height: 14rpx;
+  margin-left: 12rpx;
+}
+.result-list{
+  width:350rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 10px 36px 4px rgba(4,11,12,0.15);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50rpx;
+  transition-duration: 0.5s;
+  max-height: 600rpx;
+  overflow: hidden;
+  z-index: 50;
+}
+.brand-title-input{
+  display: block;
+  height: 60rpx;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.brand-item{
+  display: block;
+  width: 100%;
+  height: 60rpx;
+  padding-left:20rpx;
+  line-height: 60rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.checked_change{
+  color:rgba(230,86,63,1);
+}
